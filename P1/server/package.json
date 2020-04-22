@@ -1,0 +1,27 @@
+{
+  "name": "tienda",
+  "version": "1.0.0",
+  "description": "tienda online node",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myTeachingURJC/2018-19-LTAW.git"
+  },
+  "keywords": [
+    "ltaw",
+    "p1"
+  ],
+  "author": "acarrill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myTeachingURJC/2018-19-LTAW/issues"
+  },
+  "homepage": "https://github.com/myTeachingURJC/2018-19-LTAW#readme",
+  "dependencies": {
+    "mime-types": "^2.1.22"
+  }
+}
