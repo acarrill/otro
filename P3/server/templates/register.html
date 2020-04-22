@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/portada.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="menu-col">
+      <div class="menu-item">
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <li>
+          <a href="#">Productos</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <ul>
+          <form class="search-form" action="http://localhost:8000/search" method="get">
+              <input type="text" autocomplete="off" name="search-box" value="" placeholder="search">
+          </form>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item" style="left:80px;">
+      <a href="http://localhost:8000/form">Make an order</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="/static/home.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="error-mssg">
+    <p>Pls login yourself to enter in page and buy</p>
+    <a href="/login">
+      <button type="button" name="button">Login</button>
+    </a>
+  </div>
+
+  </body>
+</html>

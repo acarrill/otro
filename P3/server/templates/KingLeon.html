@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/portada.css">
+  <meta charset="utf-8">
+  <script type="application/javascript" src="static/cart.js"></script>
+  <title></title>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="menu-col">
+      <div class="menu-item">
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <li>
+          <a href="#">Productos</a>
+        </li>
+      </div>
+      <div id="search-bar" class="menu-item">
+        <ul>
+          <form class="search-form" action="/searched" onkeydown="search(event)" method="get">
+              <input id="search-box" autocomplete="off" type="text" name="search-box" value="" placeholder="search">
+              <li id="possible-text">Try one of this searchs:</li>
+          </form>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item" style="left:80px;">
+      <a href="http://localhost:8000/templates/compra.html">Comprar</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="http://localhost:8000/static/home.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <a href="#">
+      <div class="col-item">
+        <a href="KingLeon.add">
+          <p id=item-text>King of Leon Bull Machine </p>
+          <img src="static/KingLeon.jpeg" alt="">
+          <p id=item-text>Add to cart <b>12.0$</b></p>
+        </a>
+      </div>
+    </a>
+  </div>
+
+  </body>
+</html>

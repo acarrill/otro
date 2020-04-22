@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/portada.css">
+  <meta charset="utf-8">
+  <script type="application/javascript" src="http://localhost:8000/static/cart.js"></script>
+  <title></title>
+</head>
+<body onload="test()">
+  <div class="topnav">
+    <div class="menu-col">
+      <div class="menu-item">
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <li>
+          <a href="#">Productos</a>
+        </li>
+      </div>
+      <div id="search-bar" class="menu-item">
+        <ul>
+          <form class="search-form" action="search" onkeydown="search(event)" method="get">
+              <input id="search-box" type="text" name="search-box" value="" placeholder="search">
+              <li id="possible-text">Possible results:</li>
+          </form>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item" style="left:80px;">
+      <a href="http://localhost:8000/form">Comprar</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="/static/home.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <form class="form" action="/templates/form.html" method="post">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="Name"></input>
+    </div>
+    <div>
+      <label for="msg">Last Name:</label>
+      <input type="text" name="LastName"></input>
+    </div>
+    <div>
+        <label for="mail">E-mail:</label>
+        <input type="email" name="email"></input>
+    </div>
+    <div>
+        <label for="msg">Payment method:</label>
+        <input type="radio" name="payMeth" value="Visa"> Visa</input>
+        <input type="radio" name="payMeth" value="PayPal"> PayPal</input>
+        <input type="radio" name="payMeth" value="BankTransfer"> Bank Transfer</input>
+    </div>
+    <div class="button">
+        <button type="submit">Send your message</button>
+    </div>
+</form>
+
+  <div class="error-mssg" style="display:none;">
+    <p>CART IS EMPTY!!!</p>
+  </div>
+
+  <div class="cart-mssg">
+  </div>
+
+  </body>
+</html>
