@@ -1,0 +1,20 @@
+{
+  "name": "node-chat",
+  "description": "Proyecto node chat",
+  "keywords": [
+    "ltaw"
+  ],
+  "version": "0.0.1",
+  "author": "Álvaro Jiménez (acarrill)",
+  "main": "chat-server.js",
+  "devDependencies": {},
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acarrill/2018-19-LTAW-practicas/tree/master/Practica-4"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
+}

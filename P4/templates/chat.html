@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/portada.css">
+    <meta charset="utf-8">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script type="application/javascript" src="chat-client.js"></script>
+    <title></title>
+  </head>
+  <body onload="login()">
+    <div class="topnav">
+      <p id="ty-mssg" style="display:none">Thank you ur username is: </p>
+      <div id="login-tool">
+        <p>Pls choose an username before start chatting <3</p>
+        <input id="login-input" autocomplete="off" />
+        <button type="button" id="login-send">SEND</button>
+      </div>
+      <button id="logout-button" type="button" name="LogOut">LogOut</button>
+    </div>
+
+    <div class="row">
+        <div class="col-item">
+          <p style="color:orange">Welcome to chachi chat <3</p>
+          <textarea id="display" cols="30" rows="10" readonly></textarea>
+          <input id="msg" autocomplete="off" />
+          <button type="button" id="send">SEND</button>
+        </div>
+      </div>
+      <div class="cart-mssg">
+      </div>
+  </body>
+</html>
