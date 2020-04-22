@@ -22,29 +22,41 @@ function test() {
   }
 }
 
+function select(event) {
+  let inputBox = document.getElementById("search-input");
+  let combo = document.getElementById("options-combo");
+
+  inputBox.value = combo.value;
+}
+
 function search(event) {
   let searchBar = document.getElementById("search-bar");
-  let searchBox = document.getElementById("search-box");
-  let results = document.getElementById("possible-text")
+  let searchBox = document.getElementById("search-input");
+  let results = document.getElementById("options-combo")
   const searchValue = searchBox.value;
   const KeyCode = Number(event.keyCode);
 
+  if  (KeyCode == 13) {
+    event.preventDefault();
+  }
+
   if (KeyCode > 64 && KeyCode < 91 && searchValue.length >= 2) {
     let ajax = new XMLHttpRequest();
-
     ajax.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
         // if exists old results we remove it
-        if (document.getElementById("search-match") != null) {
-          results.removeChild(document.getElementById("search-match"))
-        }
+        // if (document.getElementById("search-match") != null) {
+        //   results.removeChild(document.getElementById("search-match"))
+        // }
         let response = JSON.parse(this.response);
-        results.style = "display:block"
-        let li = document.createElement("LI");
-        li.setAttribute("id", "search-match")
-        li.innerText = response;
-        li.style = "color:white"
-        results.appendChild(li);
+        if (response.length != 0) {
+          let option = document.createElement("option");
+          option.setAttribute("id", "search-match")
+          option.value = response;
+          option.innerText = response;
+          // option.style = "color:white"
+          results.appendChild(option);
+        }
       }
     };
     ajax.open("GET", "searching="+searchValue, true)

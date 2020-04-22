@@ -30,6 +30,7 @@ http.createServer((req, res) => {
     extension = 'html';
   }
 
+  // COOKIES CONTROL
 
   if (extension == "add") { //METER EN function
     let product = urlArray[urlArray.length-2]
@@ -94,8 +95,8 @@ http.createServer((req, res) => {
               </div>
               <div class="menu-item">
                 <ul>
-                  <form class="search-form" action="search" method="get">
-                      <input type="text" name="search-box" value="" placeholder="search">
+                  <form class="search-form" action="http://localhost:8000/search" method="get">
+                      <input type="text" autocomplete="off" name="search-box" value="" placeholder="search">
                   </form>
                 </ul>
               </div>
