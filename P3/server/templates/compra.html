@@ -21,9 +21,13 @@
       </div>
       <div id="search-bar" class="menu-item">
         <ul>
-          <form class="search-form" action="search" onkeydown="search(event)" method="get">
-              <input id="search-box" type="text" name="search-box" value="" placeholder="search">
-              <li id="possible-text">Possible results:</li>
+          <form class="search-form" action="/searched" onkeydown="search(event)" method="get">
+              <input id="search-input" autocomplete="off" type="text" name="search-box" value="" placeholder="search">
+              <div class="">
+                <select id="options-combo" onclick="select(event)">
+                </select>
+                <button type="submit" name="Buscar">Buscar</button>
+              </div>
           </form>
         </ul>
       </div>
