@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'portada.css' %}">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="menu-col">
+      <div class="menu-item">
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <li>
+          <a href="http://localhost:8000/">Productos</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <ul>
+          <form class="search-form" action="http://localhost:8000/search" method="get">
+              <input type="text" name="search-box" value="" placeholder="search">
+          </form>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item" style="left:80px;">
+      <a href="http://localhost:8000/form">Make an order</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="/static/home.png" alt="">
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for result in results %}
+      <div class="col-item" style="border: 3px solid grey;">
+        <a href="{{result.path}}">
+          <p id=item-text>{{result.author}} {{result.name}}</p>
+            <img src="{% static result.img %}" alt="">
+          <p id=item-text>Buy <b>{{result.price}}$</b></p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% if not results %}
+    <div class="error-mssg">
+      <p>Content Not Found</p>
+    </div>
+  {% endif %}
+
+  </body>
+</html>

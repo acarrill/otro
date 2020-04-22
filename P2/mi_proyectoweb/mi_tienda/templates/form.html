@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" type="text/css" href="{% static 'portada.css' %}">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+  <div class="topnav">
+    <div class="menu-col">
+      <div class="menu-item">
+        <li>
+          <a href="">Contacto</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <li>
+          <a href="http://localhost:8000/">Productos</a>
+        </li>
+      </div>
+      <div class="menu-item">
+        <ul>
+          <form class="search-form" action="http://localhost:8000/search" method="get">
+              <input type="text" name="search-box" value="" placeholder="search">
+          </form>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-item" style="left:80px;">
+      <a href="http://localhost:8000/form">Make an order</a>
+    </div>
+    <div class="menu-item">
+      <a href="http://localhost:8000/">
+        <img src="{% static 'home.png' %}" alt="">
+      </a>
+    </div>
+  </div>
+
+  {% if order %}
+    <div class="info-mssg">
+      <p >Your order data: {{order.userName}} {{order.email}}  {{order.product}}  {{order.numProducts}}</p>
+    </div>
+  {% endif %}
+
+  {% if not order %}
+
+    <div class="row">
+      {% if form.errors %}
+        <p>Please correct the error {{ form.errors|pluralize }} below</p>
+      {% endif %}
+      <form action="http://localhost:8000/form" method="post">{% csrf_token %}
+        <table>
+          {{ form.as_table }}
+        </table>
+        <input type="submit" name="" value="Submit">
+      </form>
+    </div>
+
+  {% endif %}
+
+  </body>
+</html>
