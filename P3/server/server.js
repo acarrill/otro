@@ -153,7 +153,7 @@ http.createServer((req, res) => {
     res.end(matchesJSON);
   }
   if (url.includes("./searched")) {
-    let productTemplate = url.split("=")[1];
+    let productTemplate = url.split("=")[1].split("&")[0];
     console.log('search');
     console.log(productTemplate);
     url = `./templates/${productTemplate}.html`;
