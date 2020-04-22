@@ -2,7 +2,10 @@ var http = require('http');
 var url = require('url');
 var fs = require('fs');
 
+  console.log('Server Started...');
+
 http.createServer((req, res) => {
+
   const Products = ["PINKFLOYD", "NEWORDER", "KINGLEON", "KINGCRIMSON"];
 
   url = ('.' + req.url);
@@ -156,7 +159,11 @@ http.createServer((req, res) => {
     let productTemplate = url.split("=")[1].split("&")[0];
     console.log('search');
     console.log(productTemplate);
-    url = `./templates/${productTemplate}.html`;
+    if (Products.includes(productTemplate)) {
+      url = `./templates/${productTemplate}.html`;
+    }else {
+      url = `./templates/error.html`;
+    }
     extension = "html";
     console.log(url);
   }

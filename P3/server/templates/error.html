@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="static/portada.css">
+    <meta charset="utf-8">
+    <script type="application/javascript" src="static/cart.js"></script>
+    <title></title>
+  </head>
+  <body onload="test()">
+    <div class="topnav">
+      <div class="menu-col">
+        <div class="menu-item">
+          <li>
+            <a href="">Contacto</a>
+          </li>
+        </div>
+        <div class="menu-item">
+          <li>
+            <a href="./">Productos</a>
+          </li>
+        </div>
+        <div id="search-bar" class="menu-item">
+          <ul>
+            <form class="search-form" action="/searched" onkeydown="search(event)" method="get">
+                <input id="search-input" autocomplete="off" type="text" name="search-box" value="" placeholder="search">
+                <div class="">
+                  <select id="options-combo" onclick="select(event)">
+                  </select>
+                  <button type="submit" name="Buscar">Buscar</button>
+                </div>
+            </form>
+          </ul>
+        </div>
+      </div>
+      <div class="menu-item" style="left:80px;">
+        <a href="./templates/compra.html">Comprar</a>
+      </div>
+      <div class="menu-item">
+        <a href="./">
+          <img src="static/home.png" alt="">
+        </a>
+      </div>
+    </div>
+
+    <div class="error-mssg">
+      <p>Content Not Found</p>
+    </div>
+  </body>
+</html>

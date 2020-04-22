@@ -45,17 +45,20 @@ function search(event) {
     ajax.onreadystatechange = function(){
       if (this.readyState == 4 && this.status == 200) {
         // if exists old results we remove it
-        // if (document.getElementById("search-match") != null) {
-        //   results.removeChild(document.getElementById("search-match"))
-        // }
+        while (results.firstChild) {
+          results.removeChild(results.lastChild);
+        }
+
         let response = JSON.parse(this.response);
         if (response.length != 0) {
-          let option = document.createElement("option");
-          option.setAttribute("id", "search-match")
-          option.value = response;
-          option.innerText = response;
-          // option.style = "color:white"
-          results.appendChild(option);
+          for (var i = 0; i < response.length; i++) {
+            let option = document.createElement("option");
+            option.setAttribute("id", "search-match:" + response[i]);
+            option.value = response[i];
+            option.innerText = response[i];
+            results.appendChild(option);
+          }
+
         }
       }
     };
