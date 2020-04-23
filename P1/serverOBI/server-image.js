@@ -8,15 +8,16 @@ const PUERTO = 8080
 http.createServer((req, res) => {
   console.log("----------> Peticion recibida")
   let q = url.parse(req.url, true);
-  console.log("Recurso:" + q.pathname)
 
-
-  let filename = ""
-
-  //-- Obtener fichero a devolver
-  if (q.pathname == "/")
-    filename += "index.html"
-
+  if (q.pathname == '/') {
+    filename = 'index.html';
+  } else {
+    filename = ('.' + q.pathname);
+  }
+  // Extraccion de extension
+  urlArray = filename.split('.');
+  extension = urlArray[urlArray.length-1];
+  console.log(filename);
   //-- Leer fichero
   fs.readFile(filename, function(err, data) {
 
@@ -29,10 +30,25 @@ http.createServer((req, res) => {
     //-- Tipo mime por defecto: html
     let mime = "text/html"
 
+    if (extension == 'css') {
+      mime = 'text/css';
+    }
+    if (extension == 'jpeg') {
+        mime = 'img/jpeg';
+    }
+    if (extension == 'png') {
+        mime = 'img/png';
+    }
+    if (extension == 'jpg') {
+      mime = 'img/jpg';
+    }
+    if (extension == 'png') {
+      mime = 'img/png';
+    }
+
     //-- Generar el mensaje de respuesta
     res.writeHead(200, {'Content-Type': mime});
-    res.write(data);
-    res.end();
+    res.end(data);
   });
 
 }).listen(PUERTO);

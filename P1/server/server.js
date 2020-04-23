@@ -12,20 +12,15 @@ http.createServer((req, resp) => {
   urlArray = url.split('.');
   extension = urlArray[urlArray.length-1];
   console.log(extension);
+  console.log(url);
 
   fs.readFile(url, (err, resource) => {
     if (err) {
-      console.log('mal');
       resp.writeHead(404);
       resp.end('Content not found')
     }else{
       var mimeType = 'text/html';
-      console.log(resource);
-      // if (extension == 'html') {
-      //   resp.writeHead(200, {'Content-Type': 'text/html'});
-      //   resp.end(resource);
-      // }
-      console.log("holi");
+
       if (extension == 'css') {
         mimeType = 'text/css';
       }
