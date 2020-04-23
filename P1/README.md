@@ -1,5 +1,5 @@
 # Práctica 1
 
-En este repo se colocarán los ficheros de la práctica 1 de LTAW.
+Para ejecutar mi server ir a la carpeta **/server** y ejecutar **npm start**
 
-Esto es una prueba....
+Para ejecutar la version del server obi obtenido de la guía de la asignatura ir a la carpeta **/serverOBI** y ejecutar **node server-image.js**
