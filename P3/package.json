@@ -9,7 +9,7 @@
   "main": "server.js",
   "scripts": {
     "test": "test",
-    "start": "node /server/server.js"
+    "start": "node server/server.js"
   },
   "devDependencies": {},
   "license": "GPL-3.0",
