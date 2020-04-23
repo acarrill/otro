@@ -7,6 +7,10 @@
   "version": "0.0.1",
   "author": "Álvaro Jiménez (acarrill)",
   "main": "chat-server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node chat-server.js"
+  },
   "devDependencies": {},
   "license": "GPL-3.0",
   "repository": {

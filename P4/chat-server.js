@@ -42,30 +42,37 @@ io.on('connection', function(socket){
   });
 
   //-- Detectar si se ha recibido un mensaje del cliente
-   socket.on('new_message', (msg, User) => {
+  socket.on('new_message', (msg, User) => {
      //server message if command is used
-   let serverMssg = "";
-   switch (msg) {
-     case "/help":
-      serverMssg = "SERVER MESSAGE: COMMANDS = /list /help /date /hello";
-      break;
-     case "/list":
-      serverMssg = `SERVER MESSAGE: Users = ${users}`;
-      break;
-     case "/hello":
-      serverMssg = "HEY YO  ";
-      break;
-     case "/date":
-      let date = new Date();
-      serverMssg = `SERVER MESSAGE: Date: ${date}`;
-      break;
-     default:
+    let serverMssg = "";
+    if (msg.charAt(0) == '/') {
+      switch (msg) {
+       case "/help":
+        serverMssg = "SERVER MESSAGE: COMMANDS = /list /help /date /hello";
+        break;
+       case "/list":
+        serverMssg = `SERVER MESSAGE: Users = ${users}`;
+        break;
+       case "/hello":
+        serverMssg = "HEY YO  ";
+        break;
+       case "/date":
+        let date = new Date();
+        serverMssg = `SERVER MESSAGE: Date: ${date}`;
+        break;
+       default:
+       serverMssg = "SERVER MESSAGE: This looks like an invalid command my friend";
+      }
+    } else {
      if (users.includes(User)) {
-       socket.broadcast.emit('new_message', User + ": " +msg);
+       if (msg.length != 0) {
+         socket.broadcast.emit('new_message', User + ": " +msg);
+       }
      }else{
        socket.emit('new_message', "SERVER MESSAGE: U ARE LOGOUT RELOAD THE PAGE AND LOG URSELF");
      }
    }
+
    if (serverMssg != "") {
      socket.emit('new_message', serverMssg);
    }
