@@ -10,7 +10,7 @@ http.createServer((req, res) => {
 
   url = ('.' + req.url);
   let cookies = req.headers.cookie;
-  console.log(cookies);
+  console.log(url);
   if (url == './') {
     url = './templates/tienda.html'
   }
@@ -81,6 +81,7 @@ http.createServer((req, res) => {
         <head>
           <link rel="stylesheet" type="text/css" href="http://localhost:8000/static/portada.css">
           <meta charset="utf-8">
+          <script type="application/javascript" src="static/cart.js"></script>
           <title></title>
         </head>
         <body>
@@ -88,18 +89,23 @@ http.createServer((req, res) => {
             <div class="menu-col">
               <div class="menu-item">
                 <li>
-                  <a href="">Contacto</a>
+                  <a href="http://localhost:8000/">Contacto</a>
                 </li>
               </div>
               <div class="menu-item">
                 <li>
-                  <a href="#">Productos</a>
+                  <a href="http://localhost:8000/">Productos</a>
                 </li>
               </div>
               <div class="menu-item">
                 <ul>
-                  <form class="search-form" action="http://localhost:8000/search" method="get">
-                      <input type="text" autocomplete="off" name="search-box" value="" placeholder="search">
+                  <form class="search-form" action="/searched" onkeydown="search(event)" method="get">
+                      <input id="search-input" autocomplete="off" type="text" name="search-box" value="" placeholder="search">
+                      <div class="">
+                        <select id="options-combo" onclick="select(event)">
+                        </select>
+                        <button type="submit" name="Buscar">Buscar</button>
+                      </div>
                   </form>
                 </ul>
               </div>

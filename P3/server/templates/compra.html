@@ -6,17 +6,17 @@
   <script type="application/javascript" src="http://localhost:8000/static/cart.js"></script>
   <title></title>
 </head>
-<body onload="test()">
+<body onload="shoppingCart()">
   <div class="topnav">
     <div class="menu-col">
       <div class="menu-item">
         <li>
-          <a href="">Contacto</a>
+          <a href="http://localhost:8000/">Contacto</a>
         </li>
       </div>
       <div class="menu-item">
         <li>
-          <a href="#">Productos</a>
+          <a href="http://localhost:8000/">Productos</a>
         </li>
       </div>
       <div id="search-bar" class="menu-item">
@@ -57,7 +57,7 @@
     </div>
     <div>
         <label for="msg">Payment method:</label>
-        <input type="radio" name="payMeth" value="Visa"> Visa</input>
+        <input type="radio" name="payMeth" value="Visa" required> Visa</input>
         <input type="radio" name="payMeth" value="PayPal"> PayPal</input>
         <input type="radio" name="payMeth" value="BankTransfer"> Bank Transfer</input>
     </div>

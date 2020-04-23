@@ -1,4 +1,4 @@
-function test() {
+function shoppingCart() {
   let cookies = document.cookie;
   let cartMssg = document.getElementsByClassName("cart-mssg");
   let cartContent = document.createElement("P");
@@ -17,7 +17,6 @@ function test() {
     }
   }
   if (cartEmpty) {
-    console.log("dfjsdfhb");
     document.getElementsByClassName('error-mssg')[0].style.display = "block";
   }
 }
