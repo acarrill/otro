@@ -1,3 +1,3 @@
 # Práctica 4
 
-En este repo se colocarán los ficheros de la práctica 4 de LTAW
+Para utilizar esta aplicación entrar en la carpeta p4 y ejecutar el comando "npm start". El server se iniciará en el puerto 3000
