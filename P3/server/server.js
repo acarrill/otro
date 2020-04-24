@@ -112,7 +112,7 @@ http.createServer((req, res) => {
               </div>
             </div>
             <div class="menu-item" style="left:80px;">
-              <a href="./templates/compra.html">Comprar</a>
+              <a href="http://localhost:8000/templates/compra.html">Comprar</a>
             </div>
             <div class="menu-item">
               <a href="http://localhost:8000/">
