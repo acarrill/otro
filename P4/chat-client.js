@@ -2,18 +2,22 @@ function login() {
   //-- Crear el websocket
   var socket = io();
   let loginTool = document.getElementById('login-tool');
-  let loginInput = document.getElementById('login-input');
-  let loginButton = document.getElementById('login-send');
+  let logginInput = document.getElementById('login-input');
+  let logginButton = document.getElementById('login-send');
   let tyMssg = document.getElementById('ty-mssg');
 
-  loginButton.onclick = () => {
-    const User = loginInput.value;
-    loginTool.style = "display:none";
-    tyMssg.innerHTML += User;
-    tyMssg.style = "display:block";
+  logginButton.onclick = () => {
+    if (logginInput.value.length == 0) {
+      logginButton.innerHTML = "Usuarios vacios no";
+    } else {
+      const User = logginInput.value;
+      loginTool.style = "display:none";
+      tyMssg.innerHTML += User;
+      tyMssg.style = "display:block";
 
-    socket.emit('login', User);
-    main(socket, User);
+      socket.emit('login', User);
+      main(socket, User);
+    }
   }
 }
 
