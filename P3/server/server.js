@@ -10,7 +10,7 @@ http.createServer((req, res) => {
 
   url = ('.' + req.url);
   let cookies = req.headers.cookie;
-  console.log(url);
+
   if (url == './') {
     url = './templates/tienda.html'
   }
@@ -25,6 +25,7 @@ http.createServer((req, res) => {
       url = "./templates/register.html";
     }
   }
+  console.log(url);
 
   if (url == './login'){
     const User = Math.floor((Math.random()*1000) + 1)

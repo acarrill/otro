@@ -1,3 +1,3 @@
 # Práctica 3
 
-En este repo se colocarán los ficheros de la práctica 3 de LTAW
+Para ejecutar mi server ir a la carpeta **/server** y ejecutar **npm start**
